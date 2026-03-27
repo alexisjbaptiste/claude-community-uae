@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .left {
+            flex: 1;
+            background: #1a1a1a;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Terminal lines background decoration */
+        .left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 38px,
+                    rgba(218, 119, 86, 0.03) 38px,
+                    rgba(218, 119, 86, 0.03) 39px
+                );
+            pointer-events: none;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #ff5f57; }
+        .dot.yellow { background: #febc2e; }
+        .dot.green { background: #28c840; }
+
+        .terminal-title {
+            margin-left: 12px;
+            color: #666;
+            font-size: 13px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        .prompt {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .prompt .cmd {
+            color: #DA7756;
+        }
+
+        .main-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-text h1 {
+            font-size: 46px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .main-text h1 span {
+            color: #DA7756;
+        }
+
+        .main-text p {
+            font-size: 18px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .right {
+            width: 380px;
+            background: #DA7756;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 38px,
+                    rgba(255, 255, 255, 0.05) 38px,
+                    rgba(255, 255, 255, 0.05) 39px
+                );
+            pointer-events: none;
+        }
+
+        .logo-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 44px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .community-label {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .community-label .name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .community-label .sub {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: #DA7756;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="left">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <span class="terminal-title">claude-community-uae</span>
+        </div>
+        <div class="prompt">$ claude <span class="cmd">--join community</span></div>
+        <div class="prompt">$ <span class="cmd">connecting builders...</span><span class="cursor"></span></div>
+        <div class="main-text">
+            <h1>Where the best builders in the UAE <span>ship with Claude.</span></h1>
+            <p>Developers. Technical practitioners. Real projects.</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="logo-icon">&gt;_</div>
+        <div class="community-label">
+            <div class="name">Claude<br>Community</div>
+            <div class="sub">UAE</div>
+        </div>
+    </div>
+</body>
+</html>
