@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Community UAE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F0E8;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Logo mark */
+        .logo-mark {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .logo-mark .spark {
+            width: 32px;
+            height: 32px;
+            background: #DA7756;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-mark .spark svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .logo-mark span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6B4FBB;
+        }
+
+        /* Hero */
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.75rem;
+            color: #1a1a1a;
+        }
+
+        h1 .highlight {
+            color: #6B4FBB;
+        }
+
+        /* About */
+        .about {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            margin-bottom: 3rem;
+        }
+
+        .about strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Form */
+        .join-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .join-form input {
+            width: 100%;
+            padding: 0.9rem 1.1rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 1.5px solid #d4cfc5;
+            border-radius: 10px;
+            background: #FDFBF7;
+            color: #1a1a1a;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .join-form input::placeholder {
+            color: #a09a8e;
+        }
+
+        .join-form input:focus {
+            border-color: #6B4FBB;
+            box-shadow: 0 0 0 3px rgba(107, 79, 187, 0.1);
+        }
+
+        .join-form button {
+            width: 100%;
+            padding: 0.95rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            background: #6B4FBB;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            letter-spacing: 0.01em;
+        }
+
+        .join-form button:hover {
+            background: #5a3faa;
+        }
+
+        .join-form button:active {
+            transform: scale(0.985);
+        }
+
+        .join-form button:disabled {
+            background: #a89cd4;
+            cursor: not-allowed;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #9a9488;
+        }
+
+        /* Success state */
+        .success-message {
+            display: none;
+            padding: 1.5rem;
+            background: #FDFBF7;
+            border: 1.5px solid #6B4FBB;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-message h3 {
+            color: #6B4FBB;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .success-message p {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            font-size: 0.78rem;
+            color: #b0a99d;
+            letter-spacing: 0.04em;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .about {
+                font-size: 0.95rem;
+            }
+
+            body {
+                padding: 2rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-mark">
+            <div class="spark">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="white"/>
+                </svg>
+            </div>
+            <span>Claude Community UAE</span>
+        </div>
+
+        <h1>This is where the best builders in the UAE meet to <span class="highlight">ship with Claude.</span></h1>
+
+        <p class="about">
+            We're building the most ambitious community of <strong>developers and technical practitioners</strong> in the UAE who are pushing the limits of what's possible with Claude. Real projects. Real builders. No fluff.
+            <br><br>
+            Whether you're shipping production AI, automating workflows, or experimenting with what's next — <strong>this is your crew.</strong> Meet in person. Share what you're building. Get better, faster.
+            <br><br>
+            <strong>Spots are limited. The first cohort is forming now.</strong>
+        </p>
+
+        <form class="join-form" id="joinForm">
+            <input type="text" name="firstName" placeholder="First name" required autocomplete="given-name" />
+            <input type="tel" name="whatsapp" placeholder="WhatsApp number (+971...)" required autocomplete="tel" />
+            <button type="submit">Join the Community</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <h3>You're in.</h3>
+            <p>We'll reach out on WhatsApp with next steps. Welcome to the crew.</p>
+        </div>
+
+        <p class="form-note">We'll only use your WhatsApp to share community updates. No spam, ever.</p>
+
+        <footer>Dubai, UAE</footer>
+    </div>
+
+    <script>
+        const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
+        document.getElementById('joinForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const firstName = form.firstName.value.trim();
+            const whatsapp = form.whatsapp.value.trim();
+
+            if (!firstName || !whatsapp) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Joining...';
+
+            try {
+                if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            firstName: firstName,
+                            whatsapp: whatsapp,
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+                }
+
+                form.style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Join the Community';
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
