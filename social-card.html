@@ -137,18 +137,14 @@
         .logo-icon {
             width: 100px;
             height: 100px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 44px;
-            font-weight: 700;
-            color: #fff;
             margin-bottom: 30px;
             position: relative;
             z-index: 1;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         .community-label {
@@ -206,7 +202,20 @@
         </div>
     </div>
     <div class="right">
-        <div class="logo-icon">&gt;_</div>
+        <div class="logo-icon">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Claude AI logo - stylized starburst -->
+                <circle cx="50" cy="50" r="8" fill="white"/>
+                <ellipse cx="50" cy="24" rx="5.5" ry="8" fill="white" opacity="0.95"/>
+                <ellipse cx="50" cy="76" rx="5.5" ry="8" fill="white" opacity="0.95"/>
+                <ellipse cx="24" cy="50" rx="8" ry="5.5" fill="white" opacity="0.95"/>
+                <ellipse cx="76" cy="50" rx="8" ry="5.5" fill="white" opacity="0.95"/>
+                <ellipse cx="31.6" cy="31.6" rx="5.5" ry="8" transform="rotate(-45 31.6 31.6)" fill="white" opacity="0.9"/>
+                <ellipse cx="68.4" cy="68.4" rx="5.5" ry="8" transform="rotate(-45 68.4 68.4)" fill="white" opacity="0.9"/>
+                <ellipse cx="68.4" cy="31.6" rx="5.5" ry="8" transform="rotate(45 68.4 31.6)" fill="white" opacity="0.9"/>
+                <ellipse cx="31.6" cy="68.4" rx="5.5" ry="8" transform="rotate(45 31.6 68.4)" fill="white" opacity="0.9"/>
+            </svg>
+        </div>
         <div class="community-label">
             <div class="name">Claude<br>Community</div>
             <div class="sub">UAE</div>
