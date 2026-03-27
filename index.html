@@ -33,26 +33,20 @@
         }
 
         /* Logo mark */
+        .claude-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .claude-logo svg {
+            width: 64px;
+            height: 64px;
+        }
+
         .logo-mark {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 3rem;
-        }
-
-        .logo-mark .spark {
-            width: 32px;
-            height: 32px;
-            background: #DA7756;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-mark .spark svg {
-            width: 18px;
-            height: 18px;
         }
 
         .logo-mark span {
@@ -200,12 +194,13 @@
 </head>
 <body>
     <div class="container">
+        <div class="claude-logo">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="64" height="64" rx="16" fill="#6B4FBB"/>
+                <text x="32" y="42" text-anchor="middle" font-family="Inter, monospace" font-size="24" font-weight="700" fill="white">&gt;_</text>
+            </svg>
+        </div>
         <div class="logo-mark">
-            <div class="spark">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="white"/>
-                </svg>
-            </div>
             <span>Claude Community UAE</span>
         </div>
 
