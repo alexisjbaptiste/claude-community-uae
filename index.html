@@ -238,7 +238,7 @@
         <form class="join-form" id="joinForm">
             <input type="text" name="firstName" placeholder="First name" required autocomplete="given-name" />
             <input type="tel" name="whatsapp" placeholder="WhatsApp number (+971...)" required autocomplete="tel" />
-            <textarea name="building" placeholder="What have you been building recently with Claude Code?"></textarea>
+            <textarea name="building" placeholder="What have you been building recently with Claude Code?" required></textarea>
             <button type="submit">Join the Community</button>
         </form>
 
@@ -264,7 +264,7 @@
             const whatsapp = form.whatsapp.value.trim();
             const building = form.building.value.trim();
 
-            if (!firstName || !whatsapp) return;
+            if (!firstName || !whatsapp || !building) return;
 
             btn.disabled = true;
             btn.textContent = 'Joining...';
