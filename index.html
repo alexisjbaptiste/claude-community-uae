@@ -114,6 +114,30 @@
             box-shadow: 0 0 0 3px rgba(218, 119, 86, 0.1);
         }
 
+        .join-form textarea {
+            width: 100%;
+            padding: 0.9rem 1.1rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 1.5px solid #d4cfc5;
+            border-radius: 10px;
+            background: #FDFBF7;
+            color: #1a1a1a;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .join-form textarea::placeholder {
+            color: #a09a8e;
+        }
+
+        .join-form textarea:focus {
+            border-color: #DA7756;
+            box-shadow: 0 0 0 3px rgba(218, 119, 86, 0.1);
+        }
+
         .join-form button {
             width: 100%;
             padding: 0.95rem;
@@ -214,6 +238,7 @@
         <form class="join-form" id="joinForm">
             <input type="text" name="firstName" placeholder="First name" required autocomplete="given-name" />
             <input type="tel" name="whatsapp" placeholder="WhatsApp number (+971...)" required autocomplete="tel" />
+            <textarea name="building" placeholder="What have you been building recently with Claude Code?"></textarea>
             <button type="submit">Join the Community</button>
         </form>
 
@@ -237,6 +262,7 @@
             const btn = form.querySelector('button');
             const firstName = form.firstName.value.trim();
             const whatsapp = form.whatsapp.value.trim();
+            const building = form.building.value.trim();
 
             if (!firstName || !whatsapp) return;
 
@@ -252,6 +278,7 @@
                         body: JSON.stringify({
                             firstName: firstName,
                             whatsapp: whatsapp,
+                            building: building,
                             timestamp: new Date().toISOString()
                         })
                     });
