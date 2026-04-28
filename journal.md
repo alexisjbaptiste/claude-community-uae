@@ -57,12 +57,42 @@
 - **Favicon added** — reused `community-logo.png` via `<link rel="icon">` and `<link rel="apple-touch-icon">`. Kills the harmless console 404.
 - **Cleanup script** — `apps-script-cleanup.js` written. One-shot function `cleanupExistingRows()`: forces column C to plain-text format, prepends `+` to any 10+-digit numeric value, skips already-correct + `#ERROR!` rows, logs anything flagged for manual review. Alexis runs it once from the Apps Script editor.
 
-### Open items / next decisions
+### Session: Round-2 mobile tightening — passes every viewport
 
-- ⏳ Saksham's row is `#ERROR!` → data unrecoverable, need to DM them to re-collect
-- ⏳ `581367506` outlier (A K's row, 9 digits) — will be flagged by cleanup script for manual fix; best guess is UAE Du missing `+971` prefix
-- ⏳ Original to-dos still open: WhatsApp group, first meetup plan
-- 🎯 With backend bulletproof + LinkedIn post live + 13 signups, next priority is first-cohort activation
+After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
+- Trimmed margins/padding more across mobile breakpoint
+- Wrapped second about-paragraph in `.about-extra`, hidden at `max-width:400px` (iPhone SE 375 + Galaxy S23 360 only)
+- Slightly smaller h1 on tiniest screens
+
+**Final QA — ALL GREEN across all 9 viewports:**
+- iPhone SE 375×559: form fits with 48px buffer (was -397px before any fix)
+- iPhone 14 390×659: 133px buffer
+- iPhone 14 Pro Max 430×734: 110px buffer
+- Galaxy S23 360×660: 123px buffer
+- Pixel 7 412×795: 145px buffer
+- iPads + Desktop: all OK
+- **Console errors: 0** (favicon killed the 404)
+- **Network failures: 0**
+- ✓ PASS — safe to announce done.
+
+### Final state — Claude Community UAE signup pipeline
+
+- ✅ Site: `alexisjbaptiste.github.io/claude-community-uae/` (permanent URL, GitHub Pages)
+- ✅ Form: intl-tel-input, UAE default, validates per country, outputs E.164
+- ✅ Backend: Apps Script with apostrophe text-storage — phones land as `+971...` text every time
+- ✅ Sheet: real signups confirmed (`TEST_QA_DELETE` row verified by Alexis)
+- ✅ Mobile: form above the fold on every modern phone (iPhone SE → Pro Max, Galaxy S23, Pixel 7)
+- ✅ Favicon: live, no more console errors
+- ✅ LinkedIn launch post: published 2026-04-28 — funnel running organic
+- ✅ Cleanup script (`apps-script-cleanup.js`): ready for Alexis to run once on Apps Script editor
+
+### Open items
+
+- ⏳ Alexis to run `cleanupExistingRows()` to backfill existing 12 rows
+- ⏳ Saksham's row is `#ERROR!` → data unrecoverable, DM to re-collect
+- ⏳ `581367506` (A K) — flagged by cleanup script; best guess UAE Du missing `+971` prefix
+- ⏳ Original to-dos: WhatsApp group, first meetup plan
+- 🎯 Backend bulletproof + LinkedIn live + 13 signups → next priority: first-cohort activation
 
 ## 2026-04-14
 
