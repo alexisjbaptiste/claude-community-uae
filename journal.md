@@ -100,6 +100,12 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 - ✅ LinkedIn launch post: published 2026-04-28 — funnel running organic
 - ✅ Cleanup script (`apps-script-cleanup.js`): ready for Alexis to run once on Apps Script editor
 
+### Traction milestone — 2026-04-28 afternoon
+
+**116 signups** captured (Alexis reported). 9× growth from morning's 13 in a few hours after LinkedIn went live. Community is no longer a "first cohort" — it's a scaled inbound funnel.
+
+Strategic implication: 116 in one WhatsApp group is workable (cap is ~1024) but high-noise. Worth considering: WhatsApp Channel for broadcast + smaller engaged group for active builders, or wave-based meetups instead of one big event.
+
 ### Open items
 
 - 🔥 **TODO TONIGHT (2026-04-28):** Create the WhatsApp group for the 13 signups — Alexis self-reminder
