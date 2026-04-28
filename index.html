@@ -239,34 +239,40 @@
 
         /* Mobile — tightened so form sits closer to the fold */
         @media (max-width: 600px) {
-            body { padding: 1rem 1.25rem; }
-            .claude-logo img { width: 60px; }
-            .claude-logo { margin-bottom: 0.75rem; }
-            .logo-mark { margin-bottom: 1.25rem; }
+            body { padding: 0.5rem 1.25rem; }
+            .claude-logo img { width: 56px; }
+            .claude-logo { margin-bottom: 0.5rem; }
+            .logo-mark { margin-bottom: 1rem; }
             h1 {
-                font-size: 1.7rem;
-                margin-bottom: 1rem;
+                font-size: 1.6rem;
+                margin-bottom: 0.75rem;
             }
             .about {
-                font-size: 0.9rem;
-                line-height: 1.55;
-                margin-bottom: 1.5rem;
+                font-size: 0.875rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
             }
-            .join-form { gap: 0.625rem; }
+            .join-form { gap: 0.5rem; }
             .join-form input,
             .iti__tel-input {
-                padding-top: 0.75rem;
-                padding-bottom: 0.75rem;
+                padding-top: 0.7rem;
+                padding-bottom: 0.7rem;
             }
             .join-form textarea {
-                min-height: 70px;
-                padding: 0.75rem 1rem;
+                min-height: 60px;
+                padding: 0.7rem 1rem;
             }
             .join-form button {
-                padding: 0.75rem;
+                padding: 0.7rem;
                 font-size: 1rem;
             }
-            footer { margin-top: 2rem; }
+            footer { margin-top: 1.5rem; font-size: 0.7rem; }
+        }
+
+        /* iPhone-SE-class screens — drop the second about paragraph entirely */
+        @media (max-width: 400px) {
+            .about-extra { display: none; }
+            h1 { font-size: 1.45rem; }
         }
     </style>
 </head>
@@ -282,9 +288,7 @@
         <h1>This is where the best builders in the UAE meet to <span class="highlight">ship with Claude.</span></h1>
 
         <p class="about">
-            We're building the most ambitious community of <strong>developers and technical practitioners</strong> in the UAE who are pushing the limits of what's possible with Claude. Real projects. Real builders. No fluff.
-            <br><br>
-            Whether you're shipping production AI, automating workflows, or experimenting with what's next — <strong>this is your crew.</strong> Meet and Share what you're building. Get better, faster.
+            We're building the most ambitious community of <strong>developers and technical practitioners</strong> in the UAE who are pushing the limits of what's possible with Claude. Real projects. Real builders. No fluff.<span class="about-extra"><br><br>Whether you're shipping production AI, automating workflows, or experimenting with what's next — <strong>this is your crew.</strong> Meet and Share what you're building. Get better, faster.</span>
         </p>
 
         <form class="join-form" id="joinForm">
