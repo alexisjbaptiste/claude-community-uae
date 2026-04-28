@@ -104,7 +104,17 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **116 signups** captured (Alexis reported). 9× growth from morning's 13 in a few hours after LinkedIn went live. Community is no longer a "first cohort" — it's a scaled inbound funnel.
 
-Strategic implication: 116 in one WhatsApp group is workable (cap is ~1024) but high-noise. Worth considering: WhatsApp Channel for broadcast + smaller engaged group for active builders, or wave-based meetups instead of one big event.
+### Decision — group format + opening messages
+
+**Format chosen:** ONE open WhatsApp group at 116. Hard moderation from message #1. (Considered Channel + Group split, rejected — too much friction for launch night.)
+
+**Drafts written and embedded in the 11pm reminder email:**
+- *Message #1 (Welcome + rules)*: hard tone, explicit "one warning then removed" policy stated upfront, "please leave on your own" exit ramp for non-builders
+- *Message #2 (Founder intro)*: Alexis's intro — DesertRide + Orion + agentic-workflow scaling problem — sets the depth bar
+- *Message #3 (Cadence)*: weekly Monday-Shipping, Deep-dives, Stuck, Wins formats. Sent later after intros land, not at launch.
+- *Group Description / Rulebook*: 10-rule pinned constitution. Builders-only, signal-over-noise, no self-promo / recruiter / AI-bro, English working language, "make this place better than you found it"
+
+**Routine updated:** `trig_012raCG9x1wjMNwwBcmfUZpo` now embeds all 4 drafts in the 11pm email body so Alexis can launch the group with copy/paste only — no drafting under time pressure tonight.
 
 ### Open items
 
