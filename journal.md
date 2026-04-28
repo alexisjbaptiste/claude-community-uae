@@ -88,10 +88,11 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 ### Open items
 
+- 🔥 **TODO TONIGHT (2026-04-28):** Create the WhatsApp group for the 13 signups — Alexis self-reminder
 - ⏳ Alexis to run `cleanupExistingRows()` to backfill existing 12 rows
 - ⏳ Saksham's row is `#ERROR!` → data unrecoverable, DM to re-collect
 - ⏳ `581367506` (A K) — flagged by cleanup script; best guess UAE Du missing `+971` prefix
-- ⏳ Original to-dos: WhatsApp group, first meetup plan
+- ⏳ First meetup plan (date, venue, format)
 - 🎯 Backend bulletproof + LinkedIn live + 13 signups → next priority: first-cohort activation
 
 ## 2026-04-14
