@@ -331,8 +331,10 @@
             phoneError.classList.remove('visible');
         });
 
+        let submitting = false;
         document.getElementById('joinForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            if (submitting) return; // guard against Enter-spam / double-tap
 
             const form = e.target;
             const btn = form.querySelector('button');
@@ -349,6 +351,7 @@
 
             if (!firstName || !whatsapp || !building) return;
 
+            submitting = true;
             btn.disabled = true;
             btn.textContent = 'Joining...';
 
@@ -368,6 +371,7 @@
                 form.style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
             } catch (err) {
+                submitting = false;
                 btn.disabled = false;
                 btn.textContent = 'Join the Community';
                 alert('Something went wrong. Please try again.');
