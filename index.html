@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/css/intlTelInput.css">
     <style>
         * {
             margin: 0;
@@ -171,6 +172,40 @@
             color: #9a9488;
         }
 
+        /* intl-tel-input visual overrides — match the existing input style */
+        .iti { width: 100%; display: block; }
+        .iti__tel-input {
+            width: 100%;
+            padding-top: 0.9rem;
+            padding-right: 1.1rem;
+            padding-bottom: 0.9rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 1.5px solid #d4cfc5;
+            border-radius: 10px;
+            background: #FDFBF7;
+            color: #1a1a1a;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .iti__tel-input::placeholder { color: #a09a8e; }
+        .iti__tel-input:focus {
+            border-color: #DA7756;
+            box-shadow: 0 0 0 3px rgba(218, 119, 86, 0.1);
+        }
+        .iti__tel-input.invalid {
+            border-color: #c4654a;
+            box-shadow: 0 0 0 3px rgba(196, 101, 74, 0.1);
+        }
+        .form-error {
+            display: none;
+            color: #c4654a;
+            font-size: 0.85rem;
+            text-align: left;
+            margin-top: -0.4rem;
+        }
+        .form-error.visible { display: block; }
+
         /* Success state */
         .success-message {
             display: none;
@@ -235,7 +270,8 @@
 
         <form class="join-form" id="joinForm">
             <input type="text" name="firstName" placeholder="First name" required autocomplete="given-name" />
-            <input type="tel" name="whatsapp" placeholder="WhatsApp number (+971...)" required autocomplete="tel" />
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp number" required autocomplete="tel" />
+            <span class="form-error" id="phoneError">Please enter a valid phone number for the country you selected.</span>
             <textarea name="building" placeholder="What have you been building recently with Claude Code?" required></textarea>
             <button type="submit">Join the Community</button>
         </form>
@@ -250,8 +286,27 @@
         <footer>Dubai, UAE<br>🇦🇪</footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/js/intlTelInput.min.js"></script>
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwANk2gNQqBFssQZqawjBjFTsdwwSgPX8kBHE9WtfVhac-XYfNaWkkFGZ-nMu_We0cj/exec';
+
+        const phoneInput = document.getElementById('whatsapp');
+        const phoneError = document.getElementById('phoneError');
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: 'ae',
+            preferredCountries: ['ae', 'sa', 'gb', 'us', 'fr', 'in'],
+            separateDialCode: true,
+            utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.7/build/js/utils.js'
+        });
+
+        phoneInput.addEventListener('input', () => {
+            phoneInput.classList.remove('invalid');
+            phoneError.classList.remove('visible');
+        });
+        phoneInput.addEventListener('countrychange', () => {
+            phoneInput.classList.remove('invalid');
+            phoneError.classList.remove('visible');
+        });
 
         document.getElementById('joinForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -259,8 +314,15 @@
             const form = e.target;
             const btn = form.querySelector('button');
             const firstName = form.firstName.value.trim();
-            const whatsapp = form.whatsapp.value.trim();
             const building = form.building.value.trim();
+
+            if (!iti.isValidNumber()) {
+                phoneInput.classList.add('invalid');
+                phoneError.classList.add('visible');
+                return;
+            }
+
+            const whatsapp = iti.getNumber(); // E.164, e.g. "+971501234567"
 
             if (!firstName || !whatsapp || !building) return;
 
@@ -268,19 +330,17 @@
             btn.textContent = 'Joining...';
 
             try {
-                if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
-                    await fetch(GOOGLE_SCRIPT_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            firstName: firstName,
-                            whatsapp: whatsapp,
-                            building: building,
-                            timestamp: new Date().toISOString()
-                        })
-                    });
-                }
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        firstName: firstName,
+                        whatsapp: whatsapp,
+                        building: building,
+                        timestamp: new Date().toISOString()
+                    })
+                });
 
                 form.style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
