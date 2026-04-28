@@ -87,7 +87,7 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **Verified:** Focused puppeteer test (`/tmp/qa-dup-guard.js`) hammered the form with 5 Enter presses + 3 forced submit dispatches under a 1.5s slow-fetch stub → exactly 1 fetch call fired. Guard works.
 
-**Cleanup:** `apps-script-dedup.js` written — `removeDuplicates()` keys on WhatsApp column C, keeps first occurrence, removes the rest. Alexis runs once.
+**Cleanup:** `apps-script-dedup.js` written — `removeDuplicates()` keys on WhatsApp column C, keeps first occurrence, removes the rest. Alexis confirmed ran successfully 2026-04-28 — duplicates removed.
 
 ### Final state — Claude Community UAE signup pipeline
 
