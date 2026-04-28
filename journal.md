@@ -23,8 +23,46 @@
 - ✅ **Alexis confirmed 13 real phone numbers captured in the Google Sheet** — backend confirmed working in production
 - ✅ **LinkedIn launch post published** (Alexis confirmed 2026-04-28) — funnel is now organic
 - 🚫 **Custom domain dropped from scope** (decision 2026-04-28) — sticking with the GitHub Pages URL `alexisjbaptiste.github.io/claude-community-uae/` permanently
-- ⏳ Remaining open to-dos: WhatsApp group, first meetup plan
-- 🎯 With 13 signups in hand and the LinkedIn post live, next natural step is first-cohort activation: WhatsApp group + first meetup invite
+
+### Session: Fix phone-number capture — intl-tel-input + apostrophe text-storage
+
+**Problem (from sheet screenshot):** WhatsApp column had a `#ERROR!` row (Saksham — `+...` parsed as formula → data lost), inconsistent formats (some +971, some 971, some 447, some bare national number), and one suspicious `581367506` (7-digit number with no clear country code).
+
+**Root cause (two layers):**
+1. Frontend `<input type="tel">` was freeform — no country structure, no validation, users typed whatever
+2. Apps Script `appendRow([..., data.whatsapp, ...])` let Sheets coerce: `"+..."` → formula error, `"971..."` → number (leading `+` stripped)
+
+**Fix shipped (commit `efaf2f1`):**
+- **Frontend (`index.html`):** added `intl-tel-input@23.0.7` from jsDelivr CDN. Default country UAE 🇦🇪, dropdown with all countries + dial codes, `separateDialCode: true`, validates per-country with `isValidNumber()`, outputs E.164 via `getNumber()`. Submission blocked on invalid with inline terracotta error message.
+- **Backend (`apps-script.js`):** prepend `"'"` (apostrophe) to whatsapp before `appendRow` → forces Sheets to store as literal text regardless of column formatting. Also synced repo to the 4-column deployed schema (was 3 in repo, 4 in deployed reality — drift from 2026-04-12 textarea addition).
+
+**Manual steps Alexis ran:**
+- Pasted new Apps Script into editor, saved, redeployed (Manage deployments → New version)
+- (Optional) Format WhatsApp column as plain text — recommended
+
+**QA (full Puppeteer matrix, 9 viewports — iPhone SE → Desktop 1440):**
+- ✅ Form loads with UAE flag + `+971` dial code default on every device
+- ✅ Invalid number triggers inline error on every device, no fetch fired
+- ✅ Valid number sends clean E.164 (`+971501234567`) on every device
+- ⚠️ Mobile: form is below the fold — pre-existing layout issue from 2026-04-12 textarea addition, NOT a regression from this change. Same vertical space as before.
+- ⚠️ 1 console 404 — almost certainly missing favicon, pre-existing, harmless
+
+**Real end-to-end test:** Puppeteer submitted one row through the live form. Alexis confirmed the row landed in the sheet as `+971501234567` (text, left-aligned, no `#ERROR!`). Test row `TEST_QA_DELETE` to be deleted.
+
+**Status:** ✅ Phone capture is bulletproof for new signups.
+
+### Session: Mobile-fold tighten + favicon + bulk-cleanup script (greenlit "all")
+
+- **Mobile CSS tightened** — reduced logo size (60px), shrunk h1 to 1.7rem with smaller margin, compressed about-block font + spacing, tightened form gap and input padding. Goal: get the form closer to the fold on iPhone SE / iPhone 14.
+- **Favicon added** — reused `community-logo.png` via `<link rel="icon">` and `<link rel="apple-touch-icon">`. Kills the harmless console 404.
+- **Cleanup script** — `apps-script-cleanup.js` written. One-shot function `cleanupExistingRows()`: forces column C to plain-text format, prepends `+` to any 10+-digit numeric value, skips already-correct + `#ERROR!` rows, logs anything flagged for manual review. Alexis runs it once from the Apps Script editor.
+
+### Open items / next decisions
+
+- ⏳ Saksham's row is `#ERROR!` → data unrecoverable, need to DM them to re-collect
+- ⏳ `581367506` outlier (A K's row, 9 digits) — will be flagged by cleanup script for manual fix; best guess is UAE Du missing `+971` prefix
+- ⏳ Original to-dos still open: WhatsApp group, first meetup plan
+- 🎯 With backend bulletproof + LinkedIn post live + 13 signups, next priority is first-cohort activation
 
 ## 2026-04-14
 
