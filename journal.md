@@ -89,6 +89,8 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 ### Open items
 
 - 🔥 **TODO TONIGHT (2026-04-28):** Create the WhatsApp group for the 13 signups — Alexis self-reminder
+  - **Active scheduled reminder:** routine `trig_012raCG9x1wjMNwwBcmfUZpo` fires 2026-04-28T19:00:00Z (23:00 UAE), emails alexisjbaptiste@gmail.com via Gmail connector
+  - Manage: https://claude.ai/code/routines/trig_012raCG9x1wjMNwwBcmfUZpo
 - ⏳ Alexis to run `cleanupExistingRows()` to backfill existing 12 rows
 - ⏳ Saksham's row is `#ERROR!` → data unrecoverable, DM to re-collect
 - ⏳ `581367506` (A K) — flagged by cleanup script; best guess UAE Du missing `+971` prefix
