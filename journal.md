@@ -110,7 +110,18 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **Drafts written and embedded in the 11pm reminder email:**
 - *Message #1 (Welcome + rules)*: hard tone, explicit "one warning then removed" policy stated upfront, "please leave on your own" exit ramp for non-builders
-- *Message #2 (Founder intro)*: Alexis's intro — DesertRide + Orion + agentic-workflow scaling problem — sets the depth bar
+- *Message #2 (Founder intro — FINAL, locked in)*: 4 punchlines, no metrics. The arc:
+
+  > Alexis · Dubai
+  >
+  > 15+ years in AI. Wrote code in 2009. Wrote strategy in 2017. Writing code again in 2026.
+  >
+  > Built Estée Lauder's AI strategy and platform from zero. Then L'Oréal's. Co-designed BigQuery ML with Google.
+  >
+  > Chief AI Officer @ L'Oréal Middle East by day. Builder by night, shipping on Claude:
+  > • DesertRide — off-road booking marketplace
+  > • Orion — AI media trading desk
+
 - *Message #3 (Cadence)*: weekly Monday-Shipping, Deep-dives, Stuck, Wins formats. Sent later after intros land, not at launch.
 - *Group Description / Rulebook*: 10-rule pinned constitution. Builders-only, signal-over-noise, no self-promo / recruiter / AI-bro, English working language, "make this place better than you found it"
 
