@@ -89,6 +89,18 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **Cleanup:** `apps-script-dedup.js` written — `removeDuplicates()` keys on WhatsApp column C, keeps first occurrence, removes the rest. Alexis confirmed ran successfully 2026-04-28 — duplicates removed.
 
+### Session 2026-04-29: Announcement visual — 138 signups in <24h
+
+Generated `announce-138-v1.png` (1080×1080, @2x retina).
+- Square format → works on LinkedIn, Twitter, WhatsApp, IG
+- Brand colors: beige #F5F0E8 background, terracotta #DA7756 accent
+- Hero "138" at 480px font, dominates the frame
+- Top: pixel-mascot logo + CLAUDE COMMUNITY UAE 🇦🇪 wordmark
+- Below hero: "Claude Code Builders / joined in less than 24 hours"
+- Bottom: "It's just the beginning." headline + "REGROUP · SHARE · LEARN" mantra
+- Dotted background grid in subtle terracotta for texture
+- HTML source preserved at `announce-138-v1.html` for future iterations / version variants
+
 ### Final state — Claude Community UAE signup pipeline
 
 - ✅ Site: `alexisjbaptiste.github.io/claude-community-uae/` (permanent URL, GitHub Pages)
