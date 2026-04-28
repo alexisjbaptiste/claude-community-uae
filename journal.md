@@ -110,13 +110,15 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **Drafts written and embedded in the 11pm reminder email:**
 - *Message #1 (Welcome + rules)*: hard tone, explicit "one warning then removed" policy stated upfront, "please leave on your own" exit ramp for non-builders
-- *Message #2 (Founder intro — FINAL, locked in)*: 4 punchlines, no metrics. The arc:
+- *Message #2 (Founder intro — FINAL, locked in)*: punchy elevator pitch, no metrics. The arc:
 
   > Alexis · Dubai
   >
   > 15+ years in AI. Wrote code in 2009. Wrote strategy in 2017. Writing code again in 2026.
   >
-  > Built Estée Lauder's AI strategy and platform from zero. Then L'Oréal's. Co-designed BigQuery ML with Google.
+  > Started in London in 2008 — AI startup on NLTK, when machine learning meant scikit-learn and "GenAI" wasn't a word.
+  >
+  > Then I built the AI strategy and platform of the two biggest beauty groups in the world — *from the ground up*: Estée Lauder & L'Oréal.
   >
   > Chief AI Officer @ L'Oréal Middle East by day. Builder by night, shipping on Claude:
   > • DesertRide — off-road booking marketplace
