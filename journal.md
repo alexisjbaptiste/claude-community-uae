@@ -75,6 +75,20 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 - **Network failures: 0**
 - ✓ PASS — safe to announce done.
 
+### Session: Fix duplicate signups (LinkedIn launch flooded the form)
+
+**Problem:** Sheet showed many duplicate rows after LinkedIn post drove a wave of new signups — same name + WhatsApp + building text repeated 2× (Syed nomaan, ADARSH MENON, Ritchie Thomas, Syed, Muhammed Shammas, Moiz, others).
+
+**Root cause:** Form handler disabled the submit button after click, but did NOT block subsequent Enter-keypresses on the form. Mobile users tapping submit + an Enter key in any input → second submit event fired during the network round-trip → duplicate row.
+
+**Fix shipped (commit `168c3fd`):**
+- Added `let submitting = false;` flag, set true after validation passes (so failed validation can still retry), reset on fetch error
+- `if (submitting) return;` guard at the top of the submit handler
+
+**Verified:** Focused puppeteer test (`/tmp/qa-dup-guard.js`) hammered the form with 5 Enter presses + 3 forced submit dispatches under a 1.5s slow-fetch stub → exactly 1 fetch call fired. Guard works.
+
+**Cleanup:** `apps-script-dedup.js` written — `removeDuplicates()` keys on WhatsApp column C, keeps first occurrence, removes the rest. Alexis runs once.
+
 ### Final state — Claude Community UAE signup pipeline
 
 - ✅ Site: `alexisjbaptiste.github.io/claude-community-uae/` (permanent URL, GitHub Pages)
