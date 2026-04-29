@@ -89,6 +89,16 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **Cleanup:** `apps-script-dedup.js` written — `removeDuplicates()` keys on WhatsApp column C, keeps first occurrence, removes the rest. Alexis confirmed ran successfully 2026-04-28 — duplicates removed.
 
+### Session 2026-04-29: vCard export + WhatsApp Broadcast playbook
+
+- **Problem:** 165 signups, can't add to WhatsApp group manually one by one
+- **Solution shipped:**
+  - `apps-script-vcard.js` — exports all signups as .vcf to Drive, contacts prefixed "CCUAE" for easy bulk-select in Broadcast
+  - 4-step playbook: vCard export → Mac Contacts import → iCloud sync → WhatsApp Broadcast list
+  - Broadcast sends ONE message to 165 as individual 1-on-1 DMs simultaneously
+  - Recipients tap invite link → join group themselves; founder adds nobody manually
+- **Broadcast message draft locked:** opens with "Hey — you signed up for Claude Community UAE yesterday" (anchors notification preview), social proof in line 2, filter clauses preserved from in-group message #1, single CTA with invite link placeholder
+
 ### Session 2026-04-29: Announcement visual + LinkedIn post (founder-mode)
 
 - **v3 visual** (`announce-138-v3.png`): 142 builders, no Powered-by-Claude-Code footer, mascot at correct aspect ratio (was being compressed in v1/v2 from forced 76×76 on a 461×363 source).
