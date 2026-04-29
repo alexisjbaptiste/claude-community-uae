@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #F5F0E8;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(218, 119, 86, 0.10) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px 40px;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .top-logo {
+    width: 76px;
+    height: 76px;
+    image-rendering: pixelated;
+  }
+
+  .top-label {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    color: #DA7756;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: -50px;
+  }
+
+  .hero-number {
+    font-size: 480px;
+    font-weight: 900;
+    line-height: 0.85;
+    color: #DA7756;
+    letter-spacing: -0.05em;
+    margin-bottom: 24px;
+    text-shadow: 0 6px 0 rgba(218, 119, 86, 0.12);
+  }
+
+  .hero-label {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+  }
+
+  .hero-sublabel {
+    font-size: 22px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+
+  .hero-sublabel strong {
+    color: #DA7756;
+    font-weight: 700;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .bottom-headline {
+    font-size: 44px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.015em;
+  }
+
+  .bottom-mantra {
+    font-size: 26px;
+    font-weight: 700;
+    color: #DA7756;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .bottom-mantra .dot {
+    color: #1a1a1a;
+    margin: 0 14px;
+    font-weight: 900;
+  }
+
+  .footer-mark {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.78;
+  }
+
+  .footer-mark-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+  }
+
+  .footer-mark img {
+    height: 22px;
+    width: auto;
+    image-rendering: pixelated;
+  }
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="container">
+    <div class="top">
+      <img src="community-logo.png" class="top-logo" />
+      <div class="top-label">Claude Community UAE 🇦🇪</div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-number">138</div>
+      <div class="hero-label">Claude Code Builders</div>
+      <div class="hero-sublabel">joined in <strong>less than 24 hours</strong></div>
+    </div>
+
+    <div class="bottom">
+      <div class="bottom-headline">It's just the beginning...</div>
+      <div class="bottom-mantra">
+        Build<span class="dot">·</span>Share<span class="dot">·</span>Learn
+      </div>
+      <div class="footer-mark">
+        <span class="footer-mark-text">Powered by</span>
+        <img src="claude-code-logo.jpg" alt="Claude Code" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
