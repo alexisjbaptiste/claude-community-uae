@@ -89,6 +89,11 @@ After round-1 still showed iPhone SE/14/Galaxy S23 with form below fold:
 
 **Cleanup:** `apps-script-dedup.js` written — `removeDuplicates()` keys on WhatsApp column C, keeps first occurrence, removes the rest. Alexis confirmed ran successfully 2026-04-28 — duplicates removed.
 
+### Session 2026-04-29: Announcement visual + LinkedIn post (founder-mode)
+
+- **v3 visual** (`announce-138-v3.png`): 142 builders, no Powered-by-Claude-Code footer, mascot at correct aspect ratio (was being compressed in v1/v2 from forced 76×76 on a 461×363 source).
+- **LinkedIn post — founder-mode style**: three-punch opener (*"142 builders. 24 hours. Zero ad spend."*), bold claim (fastest community in region by a mile), thesis paragraph diagnosing market gap, hard exclusion list ("Not a meetup group. Not a Telegram of links. Not a 'what is Claude' thread"), four-verb mantra ending in "compound", FOMO closer ("the 'I was there from the start' window closes when this scales"). Hashtags: #ClaudeCode #UAE #Builders.
+
 ### Session 2026-04-29: Announcement visual — 138 signups in <24h
 
 Generated `announce-138-v1.png` (1080×1080, @2x retina).
